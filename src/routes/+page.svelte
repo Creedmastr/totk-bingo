@@ -60,7 +60,6 @@
         "Unlock duplicata",
         "Get one duplicata plate",
         "Go the the Great Plateau",
-        ""
     ];
 
     let i = 0;
@@ -104,7 +103,7 @@
 
     function handleLongPress(buttonId: any) {
         timer = setTimeout(() => {
-            buttonColor[buttonId] = "red";
+            buttonColor[buttonId] = "#ff8a8a";
         }, 500); // Adjust the duration of long-press as needed
     }
 
@@ -114,11 +113,12 @@
 
     function handleClick(buttonId: any) {
         console.log("Button ID:", buttonId);
-        buttonColor[buttonId] = "blue";
+        buttonColor[buttonId] = "#8ab7ff";
     }
 </script>
 
 <body>
+    <h3>TOTK Bingo</h3>
     <div id="grid">
         <div id="subgrid">
             {#each goals as goal, index}
@@ -135,15 +135,26 @@
             {/each}
         </div>
     </div>
+
+    <footer>
+        Hosted mercifully by the <a href="https://discord.gg/mRkShwjdA5">Bazar ambulant</a>, go check them out.
+    </footer>
 </body>
 
 <style>
+    h3 {
+        display: flex;
+        justify-content: center;
+        font-size: 4rem;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: .9rem;
+    }
     button {
         display: subgrid;
         font-size: 2rem;
         background-color: lightgray;
-        filter: drop-shadow(0 0 0.15rem black);
-        border-radius: .1rem;
+        filter: drop-shadow(0 0 0.25rem black);
+        border-radius: 0.3rem;
         border: 0;
         width: 10rem;
         height: 10rem;
@@ -155,5 +166,13 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 10px;
+    }
+
+    footer {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        margin: 0.9rem;
+        padding: 0;
     }
 </style>
