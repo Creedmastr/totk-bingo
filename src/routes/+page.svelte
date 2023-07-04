@@ -42,13 +42,18 @@
         "Go to Atheno village",
         "Go to a mine",
         "Champion's tunic",
+        "5 towers",
+        "Beat a flux construct",
+        "Weapon with 20+ damage",
+        "Kill a golem",
+        "Kill an abyss' boss",
     ];
 
     let i = 0;
     while (i < goals.length) {
         let index = Math.floor(Math.random() * possibleGoals.length);
-        console.log(i);
         goals[i] = possibleGoals[index];
+        possibleGoals.splice(index, 1);
 
         i++;
     }
@@ -101,18 +106,20 @@
 
 <body>
     <div id="grid">
-        {#each goals as goal, index}
-            <button
-                on:mousedown|preventDefault={() => handleLongPress(index)}
-                on:mouseup|preventDefault={handlePressEnd}
-                on:mouseleave|preventDefault={handlePressEnd}
-                on:click|preventDefault={() => handleClick(index)}
-                style="background-color: {buttonColor[index]}"
-                id={`btn${index}`}
-            >
-                {goal}
-            </button>
-        {/each}
+        <div id="subgrid">
+            {#each goals as goal, index}
+                <button
+                    on:mousedown|preventDefault={() => handleLongPress(index)}
+                    on:mouseup|preventDefault={handlePressEnd}
+                    on:mouseleave|preventDefault={handlePressEnd}
+                    on:click|preventDefault={() => handleClick(index)}
+                    style="background-color: {buttonColor[index]}"
+                    id={`btn${index}`}
+                >
+                    {goal}
+                </button>
+            {/each}
+        </div>
     </div>
 </body>
 
@@ -124,5 +131,15 @@
         filter: drop-shadow(0 0 0.15rem black);
         border-radius: .1rem;
         border: 0;
+        width: 10rem;
+        height: 10rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    #subgrid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
     }
 </style>
