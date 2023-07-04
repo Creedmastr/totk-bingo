@@ -55,6 +55,12 @@
         "Finish the tutorial",
         "Perfect pary an attack",
         "Do a flurry jump",
+        "Get 5 Elusis cristals",
+        "See Satori",
+        "Unlock duplicata",
+        "Get one duplicata plate",
+        "Go the the Great Plateau",
+        ""
     ];
 
     let i = 0;
