@@ -47,6 +47,14 @@
         "Weapon with 20+ damage",
         "Kill a golem",
         "Kill an abyss' boss",
+        "Kill an hynox",
+        "Go to Tarrey Town",
+        "Build a flying machine (controllable)",
+        "Build a car",
+        "Upgrade the battery",
+        "Finish the tutorial",
+        "Perfect pary an attack",
+        "Do a flurry jump",
     ];
 
     let i = 0;
